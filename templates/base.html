@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="description" content="{% block description %}{% endblock %}">
+	<meta name="keywords" content="{% block keyword %}{% endblock %}">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="{% static 'propamc/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+	<!-- Navbar -->
+	<div class="container no_padding">
+		<nav class="container navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar">
+						<li class="menu_link"><a href="/">Home</a></li>
+						<li class="menu_link"><a href="{% static 'propamc/sample.xls' %}">Sample Excel File</a></li>
+						<li class="menu_link pull-right"><a href="/download/">Download</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	{% block content %}{% endblock %}
+	<script>
+		$("#file").change(function(){
+			$(".form_form").submit();
+		});
+	</script>
+</body>
+</html>
