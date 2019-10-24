@@ -1,7 +1,7 @@
 # Geolocation
 
 Simple application for collecting cordinates from address and export as excel.
-Role based arithmatic operator.
+
 
 ## Steps need to be perform
 
